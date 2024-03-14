@@ -3,7 +3,9 @@ Official repository of [PhyloGFN: Phylogenetic inference with generative flow ne
 
 Mingyang Zhou, Zichao Yan, Elliot Layne, Nikolay Malkin, Dinghuai Zhang, Moksh Jain, Mathieu Blanchette, Yoshua Bengio
 
-We design a GFlowNet based generative model for phylogenetic inference, achieving SOTA performance in both Bayesian and parsimony-based phylogenetic inference.
+![diagram](assets/diagram.png)
+
+We design a GFlowNet based generative model for phylogenetic inference, achieving strong results in both Bayesian and parsimony-based phylogenetic inference.
 
 ## Citation
 ```bibtex
@@ -55,7 +57,7 @@ For discrete branch lengths modeling, we suggest to use the config file with the
 | Bin size| 0.001 | 0.004 | 0.004 | 0.002 | 0.002 | 0.001 | 0.001 | 0.001 |
 | Bin num |   50  |   50  |   50  |  100  |  100  |  100  |  200  |  100  |
 
-We will publish the optimized code for parsimony analysis in the future. In the meantime, if you are interested, please refer to the [supplementary materials](https://openreview.net/attachment?id=hB7SlfEmze&name=supplementary_material) to run parsimony analysis.
+We will publish the optimized code for parsimony analysis in the near future. In the meantime, if you are interested, please refer to the [supplementary materials](https://openreview.net/attachment?id=hB7SlfEmze&name=supplementary_material) to run parsimony analysis.
 
 ## TODO list
 - [ ] mutigpu training 
