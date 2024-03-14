@@ -1,0 +1,178 @@
+AMP: false
+ENV:
+  ENVIRONMENT_TYPE: ONE_STEP_BINARY_TREE
+  EVOLUTION_MODEL:
+    COMPUTE_PRIOR: true
+    PRIOR_LAMBDA: 10.0
+    SEQUENCE_LENGTH: 1949
+    VOCAB_SIZE: 4
+  REWARD:
+    C: 0.0
+    EXP_MAX: 8.0e+307
+    EXP_MIN: 5.0e-324
+    POWER: 1.0
+    RESHAPE_METHOD: EXPONENTIAL
+    SCALE: 1.0
+  SEQUENCE_TYPE: DNA_WITH_GAP
+GFN:
+  BACKWARD_MODELING: UNIFORM
+  CONDITION_ON_SCALE: false
+  LOSS_TYPE: TB
+  MODEL:
+    ARCH: TRANSFORMER
+    EDGES_MODELING:
+      CATEGORICAL:
+        BINS: 100
+        INDEPENDENT: true
+        BIN_SIZE: 0.002
+        HEAD:
+          ACT_FN: RELU
+          DROPOUT: 0.0
+          HIDDEN_SIZE: 256
+          INPUT_SIZE: 256
+          LAYERS: 3
+          OUTPUT_SIZE: 100
+        ROOT_EDGE_HEAD:
+          ACT_FN: RELU
+          DROPOUT: 0.0
+          HIDDEN_SIZE: 256
+          INPUT_SIZE: 384
+          LAYERS: 3
+          OUTPUT_SIZE: 100
+      DISTRIBUTION: CATEGORICAL
+    EVALUATION:
+      BATCH_SIZE: 32
+      BINS_NUM: 10
+      EVALUATION_FREQ: 5
+      FIXED_STATES: true
+      MAX_DUPLICATE_MUTATIONS: 5
+      MUTATIONS_TRAJS: 1000
+      PROB_ESTIMATION_METHOD: IMPORTANCE_SAMPLING
+      SAME_TREE_STRUCTURE: false
+      STATES_GENERATION_METHOD: UNIFORM_BINS
+      STATES_NUM: 100
+      TRAJECTORIES_PER_STATES: 200
+    GRAD_CLIP: 10
+    L2_REG: 0
+    LOSS_FN: MSE
+    LR_MODEL: 0.0001
+    LR_SCHEDULER:
+      COSINE:
+        LR_MAX:
+        - 0.0005
+        - 0.05
+        LR_MIN:
+        - 5.0e-05
+        - 0.005
+        T_MAX: 10
+      COSINE_WITH_RESTART:
+        CYCLE_MULTI: 2.0
+        LR_MAX:
+        - 0.0005
+        - 0.05
+        LR_MIN:
+        - 5.0e-05
+        - 0.005
+        T0: 10
+      LINEAR:
+        END_FACTOR: 0.1
+        START_FACTOR: 1.0
+        T: 30
+      TYPE: STEP
+    LR_Z: 0.01
+    SEQ_LEN: fixed_seqlen
+    SUBTB_LAMBDA: 0.9
+    TB_FAST_Z: false
+    TRANSFORMER:
+      ATTN_DROP_RATE: 0.0
+      DEPTH: 6
+      DROP_RATE: 0.0
+      FLOW_HEAD:
+        ACT_FN: RELU
+        CONCATENATE_SUMMARY_TOKEN: true
+        DROPOUT: 0.0
+        HIDDEN_SIZE: 256
+        INPUT_SIZE: 128
+        LAYERS: 3
+        OUTPUT_SIZE: 1
+      INCLUDE_SUMMARY_TOKEN: true
+      LOGITS_HEAD:
+        ACT_FN: RELU
+        CONCATENATE_SUMMARY_TOKEN: true
+        DROPOUT: 0.0
+        HIDDEN_SIZE: 256
+        INPUT_SIZE: 256
+        LAYERS: 3
+        OUTPUT_SIZE: 1
+      MLP_RATIO: 2
+      NUM_HEADS: 4
+      PART1_HEAD:
+        ACT_FN: RELU
+        CONCATENATE_SUMMARY_TOKEN: true
+        DROPOUT: 0.0
+        HIDDEN_SIZE: 256
+        INPUT_SIZE: 256
+        LAYERS: 3
+        OUTPUT_SIZE: 1
+      PART2_HEAD:
+        ACT_FN: RELU
+        CONCATENATE_CANDIDATE_TREE: true
+        DROPOUT: 0.0
+        HIDDEN_SIZE: 256
+        INPUT_SIZE: 256
+        LAYERS: 3
+        OUTPUT_SIZE: 1
+      SEQ_EMB:
+        ACT_FN: RELU
+        DROPOUT: 0.0
+        HIDDEN_SIZE: 256
+        INPUT_SIZE: 7796
+        LAYERS: 0
+        OUTPUT_SIZE: 128
+      SHARED_ENCODER: true
+      USE_TREE_TYPE_EMBEDDING: true
+    UPDATE_Z: true
+    USE_LR_SCHEDULER: true
+    Z_MLP:
+      ACT_FN: RELU
+      DROPOUT: 0.0
+      HIDDEN_SIZE: 256
+      INPUT_SIZE: 128
+      LAYERS: 3
+      OUTPUT_SIZE: 1
+    Z_PARTITION_INIT: -1
+  NORMALIZE_LIKELIHOOD: true
+  SCALES_SET:
+  - 2.0
+  - 1.8
+  - 1.5
+  - 1.3
+  - 1.0
+  TRAINING_DATA_LOADER:
+    BEST_STATE_BATCH_SIZE: 64
+    BEST_TREES_BUFFER_SIZE: 10000
+    EPOCHS_NUM: 500
+    EXPLORATION:
+      METHOD: EPS_ANNEALING
+      T: 200
+      END_VALUE: 0.001
+    FIXED_SHAPE_TREES_PATH: ''
+    FREQ_UPDATE_MODEL_WEIGHTS: 5
+    GFN_BATCH_SIZE: 64
+    GFN_FIXED_SHAPE_BATCH_SIZE: 0
+    MINI_BATCH_SPLITS: 1
+    NUM_WORKERS: 10
+    PERTURB_BUFFERED_TREE: false
+    PIN_MEMORY: true
+    RANDOM_ACTION_PROB: 0.001
+    RANDOM_BATCH_SIZE: 0
+    ROTATE_SEQ_POS: false
+    STEPS_PER_EPOCH: 200
+    TEMPERATURE_ANNEALING:
+      TEMPERATURE_ANNEALING: true
+      T: 300
+LOGGING:
+  ENABLE_TENSORBOARD: true
+  TB_DIR: ''
+  TB_NAME: tb_logs
+PARSIMONY_PROBLEM: false
