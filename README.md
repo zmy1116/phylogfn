@@ -28,6 +28,7 @@ conda activate phylogfn
 conda install pytorch torchvision torchaudio pytorch-cuda=11.8 -c pytorch -c nvidia
 conda install anaconda::docopt
 conda install etetoolkit::ete3
+conda install matplotlib tqdm dill fvcore iopath docopt
 ```
 
 ## Usage
@@ -41,7 +42,7 @@ python train.py <cfg_path> <sequences_path> <output_path> [--nb_device=<device_n
     - Continuous branch lengths modeling configs are in the folder `continuous_branch_lengths_modeling`
     - Discrete branch lengths modeling configs are in the folder `discrete_branch_lengths`
 
-PhyloGFN with continuous branch length modeling achieves SOTA MLL estimation performance
+PhyloGFN with continuous branch length modeling achieves SOTA MLL estimation performance.
 
 |                | Training trajs |     DS1         |     DS2         |     DS3         |     DS4         |     DS5         |     DS6         |     DS7         |     DS8         |  cfg/weights       |
 |----------------|----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|-----------------|----------------|
