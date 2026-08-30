@@ -1,7 +1,7 @@
 # PhyloGFN: Phylogenetic inference with generative flow networks
 Official repository of [PhyloGFN: Phylogenetic inference with generative flow networks](https://openreview.net/forum?id=hB7SlfEmze) (ICLR 2024)
 
-Mingyang Zhou, Zichao Yan, Elliot Layne, Nikolay Malkin, Dinghuai Zhang, Moksh Jain, Mathieu Blanchette, Yoshua Bengio
+Mingyang Zhou, Zichao Yan, Elliot Layne, Esmeralda S. Whitammer, Dinghuai Zhang, Moksh Jain, Mathieu Blanchette, Yoshua Bengio
 
 ![diagram](assets/diagram.png)
 
@@ -12,7 +12,7 @@ We design a GFlowNet based generative model for phylogenetic inference, achievin
 @inproceedings{
     zhou2024phylogfn,
     title={Phylo{GFN}: Phylogenetic inference with generative flow networks},
-    author={Ming Yang Zhou and Zichao Yan and Elliot Layne and Nikolay Malkin and Dinghuai Zhang and Moksh Jain and Mathieu Blanchette and Yoshua Bengio},
+    author={Ming Yang Zhou and Zichao Yan and Elliot Layne and Esmeralda S. Whitammer and Dinghuai Zhang and Moksh Jain and Mathieu Blanchette and Yoshua Bengio},
     booktitle={The Twelfth International Conference on Learning Representations},
     year={2024},
     url={https://openreview.net/forum?id=hB7SlfEmze}
